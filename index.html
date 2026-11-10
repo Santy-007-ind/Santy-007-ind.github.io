@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Santosh Kumar Tyadi | Data Engineering & Cloud Architecture Portfolio</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1e293b;
+            --accent: #2563eb;
+            --accent-hover: #1d4ed8;
+            --text-dark: #0f172a;
+            --text-muted: #475569;
+            --bg-light: #f8fafc;
+            --white: #ffffff;
+            --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* Header / Hero Section */
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, #0f172a 100%);
+            color: var(--white);
+            padding: 4rem 2rem 3rem;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.5px;
+        }
+
+        header p.subtitle {
+            font-size: 1.2rem;
+            color: #94a3b8;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.2rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+
+        .contact-links a {
+            color: var(--white);
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .contact-links a:hover {
+            background: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        /* Layout Container */
+        .container {
+            max-width: 1100px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+        }
+
+        /* Section Styling */
+        section {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--card-shadow);
+        }
+
+        section h2 {
+            font-size: 1.5rem;
+            color: var(--primary);
+            border-bottom: 3px solid var(--accent);
+            display: inline-block;
+            padding-bottom: 0.3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Grid Layouts */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .skill-card {
+            background: var(--bg-light);
+            border-left: 4px solid var(--accent);
+            padding: 1.2rem;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .skill-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.8rem;
+            color: var(--primary);
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tag {
+            background: #e2e8f0;
+            color: var(--text-dark);
+            padding: 0.3rem 0.7rem;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        /* Experience Timeline */
+        .timeline-item {
+            position: relative;
+            padding-left: 1.8rem;
+            border-left: 2px solid #cbd5e1;
+            margin-bottom: 2rem;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -7px;
+            top: 4px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--accent);
+        }
+
+        .timeline-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .timeline-meta {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 0.8rem;
+        }
+
+        .timeline-body ul {
+            list-style-type: disc;
+            padding-left: 1.2rem;
+        }
+
+        .timeline-body li {
+            margin-bottom: 0.4rem;
+            color: var(--text-muted);
+        }
+
+        /* Projects Grid */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .project-card {
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--card-shadow);
+        }
+
+        .project-card h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .project-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <h1>Santosh Kumar Tyadi</h1>
+        <p class="subtitle">Data Engineering Manager | Senior Cloud & Solution Architect</p>
+        <p style="max-width: 750px; margin: 0 auto; color: #cbd5e1;">
+            15+ years of experience leading enterprise data engineering, solution architecture, and global infrastructure governance across highly regulated financial services and banking environments.
+        </p>
+        <div class="contact-links">
+            <a href="mailto:santosh.tyadi@gmail.com"><i class="fas fa-envelope"></i> Email</a>
+            <a href="tel:+6580294494"><i class="fas fa-phone"></i> +65 80294494</a>
+            <a href="tel:+918074405792"><i class="fas fa-mobile-alt"></i> +91 8074405792</a>
+            <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+            <a href="https://github.com" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+        </div>
+    </header>
+
+    <div class="container">
+
+        <!-- Executive Summary -->
+        <section id="about">
+            <h2><i class="fas fa-user-circle"></i> Profile Overview</h2>
+            <p style="color: var(--text-muted);">
+                Strategic and hands-on engineering leader specializing in high-throughput batch/streaming ETL pipelines, enterprise data governance, and secure Azure/AWS cloud architectures. Proven track record governing multi-country engineering pods (200+ resources) across financial services, digital banking, and credit risk analytics.
+            </p>
+        </section>
+
+        <!-- Technical Expertise Grid -->
+        <section id="skills">
+            <h2><i class="fas fa-cogs"></i> Core Competencies</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h3>Big Data & Streaming</h3>
+                    <div class="tags">
+                        <span class="tag">Apache Spark</span>
+                        <span class="tag">PySpark</span>
+                        <span class="tag">Hadoop</span>
+                        <span class="tag">Apache Kafka</span>
+                        <span class="tag">Hive</span>
+                        <span class="tag">Delta Lake</span>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <h3>Cloud & Data Warehousing</h3>
+                    <div class="tags">
+                        <span class="tag">Azure Databricks</span>
+                        <span class="tag">AWS Glue</span>
+                        <span class="tag">Redshift</span>
+                        <span class="tag">Azure Synapse</span>
+                        <span class="tag">Snowflake</span>
+                        <span class="tag">PostgreSQL / Oracle</span>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <h3>DevSecOps & Platform</h3>
+                    <div class="tags">
+                        <span class="tag">Terraform</span>
+                        <span class="tag">Kubernetes (EKS/AKS)</span>
+                        <span class="tag">Docker</span>
+                        <span class="tag">GitLab CI / Jenkins</span>
+                        <span class="tag">Azure DevOps</span>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <h3>Data Governance & Quality</h3>
+                    <div class="tags">
+                        <span class="tag">Informatica EDC</span>
+                        <span class="tag">Informatica Axon</span>
+                        <span class="tag">IDQ</span>
+                        <span class="tag">Unity Catalog</span>
+                        <span class="tag">Data Vault 2.0</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Professional Experience -->
+        <section id="experience">
+            <h2><i class="fas fa-briefcase"></i> Professional Experience</h2>
+            
+            <div class="timeline-item">
+                <div class="timeline-title">Data Engineering Manager & Solution Architect</div>
+                <div class="timeline-meta">Major Financial Services & Banking Engagements | Singapore & International</div>
+                <div class="timeline-body">
+                    <ul>
+                        <li>Governed global engineering pods delivering high-volume batch and real-time streaming data integration pipelines for core banking, wealth, and credit risk engines.</li>
+                        <li>Architected enterprise cloud migration strategy utilizing Azure Databricks, PySpark, and Delta Lake formats to optimize query response times and reduce compute costs.</li>
+                        <li>Implemented end-to-end Data Governance frameworks (Informatica EDC, Axon, IDQ) establishing metadata lineage, business glossaries, and automated data quality monitoring.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-title">Lead Infrastructure & Database Engineer</div>
+                <div class="timeline-meta">Enterprise Infrastructure & Global Delivery</div>
+                <div class="timeline-body">
+                    <ul>
+                        <li>Led heterogeneous database migration initiatives (Oracle to AWS/Azure cloud instances) maintaining strict RTO/RPO SLAs and data integrity.</li>
+                        <li>Established automated CI/CD deployment pipelines using Terraform, Ansible, Docker, and Kubernetes for cloud infrastructure provisioning.</li>
+                        <li>Designed automated intelligent document processing (IDP) pipelines utilizing custom OCR engines and Python scripts.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Enterprise Solutions / Key Projects -->
+        <section id="projects">
+            <h2><i class="fas fa-project-diagram"></i> Highlighted Enterprise Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3>Retail Credit Decisioning Pipeline</h3>
+                    <p>Designed and deployed real-time PySpark scoring pipelines integrating underwriting, scorecard calculation, and limit-setting logic for credit card and personal loan applications.</p>
+                    <div class="tags">
+                        <span class="tag">PySpark</span>
+                        <span class="tag">Databricks</span>
+                        <span class="tag">Kafka</span>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <h3>Enterprise Data Governance & Lineage</h3>
+                    <p>Operationalized metadata cataloging and automated data lineage across legacy ODS and modern lakehouses using Informatica EDC and Axon suites.</p>
+                    <div class="tags">
+                        <span class="tag">Informatica</span>
+                        <span class="tag">Metadata</span>
+                        <span class="tag">Data Quality</span>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <h3>Cloud Migration & Infrastructure Automation</h3>
+                    <p>Automated heterogeneous database migrations and provisioned secure cloud infrastructure using Terraform, Kubernetes, and Azure DevOps pipelines.</p>
+                    <div class="tags">
+                        <span class="tag">Terraform</span>
+                        <span class="tag">Azure</span>
+                        <span class="tag">DevOps</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Santosh Kumar Tyadi. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
